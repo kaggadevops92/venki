@@ -25,7 +25,7 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t httpd-image:latest .
+        docker buildx build -t httpd-image .
         docker tag httpd-image:latest 187249972779.dkr.ecr.us-west-2.amazonaws.com/venkat:latest
         docker push 187249972779.dkr.ecr.us-west-2.amazonaws.com/venkat:latest
 
